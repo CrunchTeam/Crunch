@@ -22,11 +22,13 @@ namespace Closet
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        GetWeather gw = new GetWeather();
         public MainPage()
         {
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+            gw.GetAsync();
         }
 
         /// <summary>

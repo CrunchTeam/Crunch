@@ -7,7 +7,9 @@ namespace Closet
     class PictureItem
     {
         private string picName;
-
+        /// <summary>
+        /// 图片名
+        /// </summary>
         public string PicName
         {
             get { return picName; }
@@ -15,7 +17,9 @@ namespace Closet
         }
 
         private string[] picTags = new string[5];
-
+        /// <summary>
+        /// 5个标签
+        /// </summary>
         public string[] PicTags
         {
             get { return picTags; }
@@ -24,7 +28,9 @@ namespace Closet
 
         
         private bool isPublish;
-
+        /// <summary>
+        /// 是否共享到云
+        /// </summary>
         public bool IsPublish
         {
             get { return isPublish; }
