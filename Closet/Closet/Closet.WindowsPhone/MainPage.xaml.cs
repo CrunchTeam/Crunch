@@ -22,7 +22,7 @@ namespace Closet
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        GetWeather gw = new GetWeather();
+        WeatherGetter gw = new WeatherGetter();
         public MainPage()
         {
             this.InitializeComponent();
