@@ -7,6 +7,7 @@ using Windows.Storage.Streams;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Windows.Data.Json;
+using System.Runtime.Serialization.Json;
 namespace Closet
 {
     /// <summary>
@@ -60,19 +61,21 @@ namespace Closet
 
             var httpClient = new HttpClient();
             var content = await httpClient.GetStringAsync(url);
-            await Task.Run(() =>
+            Action<Task,object> readJson = WeatherGet;
+
+            Task t=Task.Run(() =>
             {
                 string c = content;
-                this.WeatherGetter(c);
+                //this.WeatherGet(c);
             });
+            await t.ContinueWith(readJson, content);
         }
 
-        public string WeatherGetter(string c)
+        public void WeatherGet(Task t,object s)
         {
             JsonObject jso = new JsonObject();
-            JsonValue jsv = JsonValue.CreateStringValue(c);
-            
-            return null;
+            JsonValue jsv = JsonValue.CreateStringValue(s.ToString());
+     
         }
 
     }

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Closet
 {
+    /// <summary>
+    /// 图片基类
+    /// </summary>
     class PictureItem
     {
         private string picName;
