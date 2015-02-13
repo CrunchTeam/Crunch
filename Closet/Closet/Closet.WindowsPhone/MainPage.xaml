@@ -5,10 +5,50 @@
     xmlns:local="using:Closet"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d" RequestedTheme="Light" Background="#FFADC9B4">
+	<Page.BottomAppBar>
+		<CommandBar Background="#FF96A78D"/>
+	</Page.BottomAppBar>
 
     <Grid>
+    	<Grid.Background>
+    		<ImageBrush Stretch="Uniform" ImageSource="Assets/main.png" Opacity="0.405"/>
+    	</Grid.Background>
+		<Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
 
-    </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题面板 -->
+        <StackPanel Grid.Row="0" Margin="19,0">
+            <TextBlock Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="联衣群" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" TextAlignment="Center" FontFamily="Global User Interface"/>
+        </StackPanel>
+
+        <!--TODO: 应将内容放入以下网格-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+        	<Border BorderBrush="#FFD53D3D" BorderThickness="1" Height="115" Margin="0" VerticalAlignment="Bottom" Width="120"/>
+        	<Border BorderBrush="#FF4AA93B" BorderThickness="1" Margin="0" Grid.Row="1" Grid.Column="2" Width="100" HorizontalAlignment="Left"/>
+        	<Border BorderBrush="#FF2B4C9F" BorderThickness="1" HorizontalAlignment="Right" Margin="0" Width="100" Grid.Row="2" Height="90" VerticalAlignment="Bottom"/>
+        	<Border BorderBrush="#FFB233B8" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="15,0,0,0" VerticalAlignment="Top" Width="130" Grid.Row="3" Grid.Column="2"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                
+            </Grid.ColumnDefinitions>
+        </Grid>
+	</Grid>
 </Page>

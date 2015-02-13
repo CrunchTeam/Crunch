@@ -47,7 +47,7 @@ namespace Closet
         public async void GetAsync()
         {
             string areaId = "101010100";
-            string type = "forecast_v";
+            string type = "index_v";
             string date = System.DateTime.Now.ToString("yyyyMMddHHmm");
             string appId = "abf5bca8b45837c2";
             string privateKey = "90661f_SmartWeatherAPI_fc1316b";

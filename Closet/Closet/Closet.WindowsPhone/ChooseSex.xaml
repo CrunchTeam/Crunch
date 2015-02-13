@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="Closet.ChooseSex"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Closet"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<Page.Background>
+		<ImageBrush Stretch="None" ImageSource="Assets/sexback.png"/>
+	</Page.Background>
+
+    <Grid>
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="Assets/sexback.png"/>
+    	</Grid.Background>
+		<Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>                
+        </Grid.ColumnDefinitions>
+    	<Border BorderThickness="0" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="150" Margin="0,30,0,0" Background="#FFCAC8C8">
+    		<TextBlock TextWrapping="Wrap" Text="第1步" FontSize="34.667" TextAlignment="Center" LineHeight="12" Margin="0,7,0,0"/>
+    	</Border>
+    	<Border x:Name="manBorder" BorderThickness="5" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" BorderBrush="LightGoldenrodYellow" Tapped="manBorder_Tapped">
+    		<Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Assets/man.png" Margin="0"/>
+    	</Border>
+    	<Border x:Name="womanBorder" BorderThickness="5" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Tapped="womanBorder_Tapped">
+    		<Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Assets/woman.png" Margin="0"/>
+    	</Border>
+    	<StackPanel Height="60" Width="170" Grid.ColumnSpan="2" Margin="0,40,0,0" Background="#FF7E7E7E" Orientation="Horizontal">
+    		<TextBlock TextWrapping="Wrap" FontSize="32" TextAlignment="Center" Foreground="#FFD4D4D4" Margin="0,10,0,0" Text="我是" HorizontalAlignment="Right"/>
+    		<TextBlock x:Name="showSexTxt" TextWrapping="Wrap" FontSize="48" Margin="0,3,0,0" Foreground="#FFDD7E36" TextAlignment="Center" Text="汉纸"/>
+    	</StackPanel>
+    	<Button Content="下一步" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Global User Interface" Grid.Row="2" Grid.Column="1" Width="100" Height="50" Foreground="#FFD4D4D4" BorderBrush="#FFD4D4D4" Click="Button_Click"/>
+    </Grid>
+</Page>

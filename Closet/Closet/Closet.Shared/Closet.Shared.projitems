@@ -16,6 +16,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)CityItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NavigationRewrite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PictureItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WeatherGetter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WeatherItem.cs" />

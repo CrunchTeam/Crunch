@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage;
 
 // “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=234238 上提供
 
@@ -23,6 +24,9 @@ namespace Closet
     public sealed partial class MainPage : Page
     {
         WeatherGetter gw = new WeatherGetter();
+        private const string IsFirstTime = "IsFirstTime";
+        private ApplicationDataContainer appDC;
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -39,7 +43,11 @@ namespace Closet
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             // TODO: 准备此处显示的页面。
-
+            appDC = ApplicationData.Current.LocalSettings;
+            if (!appDC.Values.ContainsKey(IsFirstTime))
+            {
+               this.Frame.Navigate(typeof(ChooseSex));
+            }
             // TODO: 如果您的应用程序包含多个页面，请确保
             // 通过注册以下事件来处理硬件“后退”按钮:
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed 事件。
